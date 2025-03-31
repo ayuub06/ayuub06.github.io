@@ -47,7 +47,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background-image: url("https://github.com/ayuub06/ayuub06.github.io/blob/main/ayoub-web.png?raw=true");
+            background-image: url("https://raw.githubusercontent.com/ayuub06/ayuub06.github.io/main/ayoub-web.png");
             background-size: cover;
             background-attachment: fixed;
         }
