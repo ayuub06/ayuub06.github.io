@@ -202,7 +202,7 @@
 
   <script type="text/javascript">
     (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Public Key
+      emailjs.init("VemHHDc6z1RrXNFNS"); // Replace with your Public Key
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
@@ -211,7 +211,7 @@
       // Set timestamp
       document.getElementById("time").value = new Date().toLocaleString();
 
-      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+      emailjs.sendForm("service_e61vxue", "template_16xiwwc", this)
         .then(function() {
           alert("Message sent successfully ✅");
           document.getElementById("contact-form").reset();
@@ -223,3 +223,4 @@
 </body>
 
 </html>
+
