@@ -149,9 +149,127 @@
             margin: 10px; 
         }
 
-        .projects {
-            background-color: rgb(102, 79, 79);
-        }
+        .wrapper {
+      perspective: 1000px;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      /* so it stays in the background */
+    }
+
+    .cube {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation: animate 4s linear infinite;
+    }
+
+    .side {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: grid;
+      background-color: rgba(1, 180, 249, 0.6);
+      border-radius: 10px;
+      place-content: center;
+      border: 3px solid #fff;
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+    }
+
+    .front {
+      transform: translateZ(100px);
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .projects {
+      position: relative;
+      /* so the cube is positioned relative to this section */
+      overflow: hidden;
+      /* hide overflowing cube parts if needed */
+    }
+
+    .projects .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      transform: translate(-50%, -50%);
+      /* center in section */
+      perspective: 1000px;
+      z-index: 0;
+      /* behind content */
+    }
+
+    .projects .cube {
+      width: 400px;
+      height: 400px;
+      transform-style: preserve-3d;
+      animation: animate 6s linear infinite;
+    }
+
+    .projects .side {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      display: grid;
+      place-content: center;
+      background-color: rgba(1, 180, 249, 0.5);
+      /* semi-transparent so projects are visible */
+      border-radius: 10px;
+      border: 3px solid #fff;
+      z-index: 0;
+    }
+
+    /* Cube animation */
+    @keyframes animate {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
 
         .projects .content {
             margin-top: 30px;
@@ -419,4 +537,5 @@
             transition: width 0.2s ease;
         }
     </style>
+
 
