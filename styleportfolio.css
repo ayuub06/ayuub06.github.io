@@ -219,6 +219,46 @@
       }
     }
 
+       .projects {
+  position: relative;  /* keep the section as reference */
+  overflow: hidden;    /* optional, hides cube edges */
+}
+
+.projects .wrapper {
+  position: absolute;  /* absolute inside section */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;          /* <-- behind content */
+  perspective: 1000px;
+}
+
+.projects .cube {
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  animation: animate 6s linear infinite;
+}
+
+.projects .side {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  place-content: center;
+  background-color: rgba(1, 180, 249, 0.3); /* semi-transparent */
+  border-radius: 10px;
+  border: 3px solid #fff;
+  z-index: 0; /* behind content */
+}
+
+/* Your content must be above cube */
+.projects-content {
+  position: relative;
+  z-index: 1;  /* <-- above the cube */
+}
+
+
     .projects {
       position: relative;
       /* so the cube is positioned relative to this section */
@@ -537,5 +577,6 @@
             transition: width 0.2s ease;
         }
     </style>
+
 
 
