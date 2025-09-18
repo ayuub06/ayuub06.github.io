@@ -212,6 +212,7 @@
       document.getElementById("time").value = new Date().toLocaleString();
 
       emailjs.sendForm("service_z7n4djw", "template_16xiwwc", this)
+
         .then(function() {
           alert("Message sent successfully ✅");
           document.getElementById("contact-form").reset();
@@ -223,6 +224,7 @@
 </body>
 
 </html>
+
 
 
 
